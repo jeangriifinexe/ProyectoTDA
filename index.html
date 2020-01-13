@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Hoteles Casa Andina</title>
+    <link rel="stylesheet" href="bootstrap-411/css/bootstrap.min.css">
+    <link rel="icon" type="image/png" href="imagenes/icono.png">
+    <script src="js/jquery.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <style>
+        #header {
+				margin:auto;
+				font-family:Arial, Helvetica, sans-serif;
+                position: fixed;
+                z-index: 100;
+
+			}
+			
+			ul, ol {
+				list-style:none;
+			}
+			
+			.nav {
+				width:100%; /*Le establecemos un ancho*/
+				margin-left:10%; /*Centramos automaticamente*/
+			}
+ 
+			.nav > li {
+				float:left;
+			}
+			
+			.nav li a {
+				background-color:#000;
+				color:#fff;
+				text-decoration:none;
+				padding:10px 12px;
+				display:block;
+			}
+			
+			.nav li a:hover {
+				background-color:#434343;
+			}
+			
+			.nav li ul {
+				display:none;
+				position:absolute;
+				min-width:140px;
+			}
+			
+			.nav li:hover > ul {
+				display:block;
+			}
+			
+			.nav li ul li {
+				position:relative;
+			}
+			
+			.nav li ul li ul {
+				right:-140px;
+				top:0px;
+			}
+        .site.footer a{
+            color: #737373;
+        }
+        .site.footer a:hover{
+            color: #3366cc;
+            text-decoration: none;
+        }
+        .footer-links{
+            padding-left: 0;
+            list-style: none;
+        }
+        .footer-links li{
+            display: block;
+        }
+        .footer-links a{
+            color: #737373;
+        }
+        .footer-links a:active,.footer-links a:focus,.footer-links a:hover{
+            color: #3366cc;
+            text-decoration: none;
+        }
+        .footer-links.inline li{
+            display: inline-block;
+        }
+        .copyright-text{
+            margin: 0;
+        }           
+    .contenedor{
+        position: relative;
+        display: inline-block;
+        text-align: center;
+    }
+    .texto-encima{
+        position: absolute;
+        top: 100px;
+        left: 0px;
+    }
+    .centrado{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+    .texto-abajo{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        top: 100%;
+    }
+    .nuevo-texto{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        top: 95%;
+    }
+    .pentagonal{
+        position: absolute;
+        top: 50%;
+        left: 0%;
+        transform: translate(-50%, -50%);
+        top: 105%;
+    }
+    </style>
+</head>
+<body>
+    <div id="header" style="background-color: black; width: 100%; ">
+        <nav align="center"> <!-- Aqui estamos iniciando la nueva etiqueta nav -->
+            <ul class="nav">
+                <li><a href="#" id="reservar">RESERVAR</a></li>
+                <li><a href="http://localhost/ProyectoTDA/index2.html" id="destinos">DESTINOS</a>
+                    <ul>
+                        <li><a href="">AREQUIPA</a></li>
+                        <li><a href="">CHICLAYO</a></li>
+                        <li><a href="">CHINCHA</a></li>
+                        <li><a href="">COLCA</a></li>
+                        <li><a href="">CUSCO</a></li>
+                        <li><a href="">LIMA</a></li>
+                        <li><a href="">MACHU PICCHU</a></li>
+                        <li><a href="">COLCA</a></li>
+                    </ul>
+                </li>
+                <li><a href="">NUESTROS HOTELES</a>
+                    <ul>
+                        <li><a href="">PREMIUM</a>
+                            <ul>
+                                <li><a href="">AREQUIPA</a></li>
+                                <li><a href="">CUSCO</a></li>
+                                <li><a href="">MIRAFLORES</a></li>
+                                <li><a href="">PIURA</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="">SELECT</a>
+                            <ul>
+                                <li><a href="">AREQUIPA</a></li>
+                                <li><a href="">CHICLAYO</a></li>
+                                <li><a href="">MIRAFLORES</a></li>
+                                <li><a href="">MOQUEGUA</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="">STANDARD</a>
+                            <ul>
+                                <li><a href="">AREQUIPA</a></li>
+                                <li><a href="">CHINCHA</a></li>
+                                <li><a href="">COLCA</a></li>
+                                <li><a href="">CUSCO</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li><a href="">RESTAURANTES</a>
+                    <ul>
+                        <li><a href="">ALMA BAR RESTAURANTE</a>
+                            <ul>
+                                <li><a href="">AREQUIPA</a></li>
+                                <li><a href="">CUSCO</a></li>
+                                <li><a href="">MIRAFLORES</a></li>
+                                <li><a href="">PUNO</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="">LA PLAZA BAR & GRILL</a>
+                            <ul>
+                                <li><a href="">AREQUIPA</a></li>
+                                <li><a href="">CHICLAYO</a></li>
+                                <li><a href="">CHINCHA</a></li>
+                                <li><a href="">MIRAFLORES</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="">SAMA RESTAURANTE CAFE</a>
+                            <ul>
+                                <li><a href="">AREQUIPA</a></li>
+                                <li><a href="">COLCA</a></li>
+                                <li><a href="">CUSCO</a></li>
+                                <li><a href="">MACHU PICCHU</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="">SAMA HEALTHY EXPRESS</a>
+                            <ul>
+                                <li><a href="">MIRAFLORES</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li><a href="">PROMOCIONES</a></li>
+                <li><a href="">EVENTOS</a></li>
+                <li><a href=""></a></li>
+                <li><a href=""></a></li>
+                <li><a href="">PEN</a>
+                    <ul>
+                        <li><a href="">US $</a></li>
+                        <li><a href="">BRL</a></li>
+                    </ul>
+                </li>
+                <li><a href="">Español</a>
+                    <ul>
+                        <li><a href="">Inglés</a></li>
+                        <li><a href="">Portugués</a></li>
+                    </ul>
+                </li>
+                <li><a href=""><img src="imagenes/image.png" height="20px" width="20px" alt=""></a>
+                    <li><a href=""><img src="imagenes/image2.png" height="20px" width="20px" alt=""></a>
+                        <ul>
+                            <li><a href="">+51 (01) 391-6500</a></li>
+                            <li><a href="">CENTARLDERESERVAS@CASA-ANDINA.COM</a></li>
+                            <li><a href="">FORMULARIO DEL CONTACTO</a></li>
+                        </ul>
+                    </li>    
+            </ul>
+        </nav><!-- Aqui estamos cerrando la nueva etiqueta nav -->
+    </div>
+    <div class="contenedor">
+        <img id="fotocambia" height="500px" width="100%" src="imagenes/casa-andina-private-collection-puno-1.jpg">
+        <div class="texto-encima"><img src="imagenes/lg3.png" height="100px" width="150px"></div>
+        <div class="centrado" style="color: white ; border: 3px white dashed; height: 300px; width: 500px; padding: 40px; -webkit-text-stroke: 2px black;"><font size="4" style="-webkit-text-stroke: 1px white;"><b>30 hoteles, 18 destinos</font><br><font size="+4" >Descubre el<br> Perú con Casa<br> Andina</b></font></div>
+        <div class="texto-abajo"><table class="form-control" style="color: white;background-color: black;" class="egt">
+            <tr>
+                <td style="text-align: left;"><b>DESTINO, HOTEL</b></td>
+                <td style="text-align: left;"><b>ENTRADA</b></td>
+                <td style="text-align: left;"><b>SALIDA</b></td>
+                <td style="text-align: left;"><b>CODIGO</b></td>
+                <td><button style="background-color:orangered; color: white;" class="form-control"><a href="http://localhost/ProyectoTDA/index2.html">Buscar</a></button></td>
+            </tr>
+            <tr>
+                <td><form>
+                    <div>
+                        <input type="search" id="MySearch" name="q"
+                        placeholder="Ingrese su destino" size="30" style="background-color: black; color: white;">
+                    </div>
+                </form>
+                </td>
+                <td>
+                    <form name="formulario" method="post" action="http://pagina.com/send.php">
+                        <input type="date" name="fecha" class="form-control" min="2020-01-13" max="2020-11-11" step="1">
+                    </form>
+                </td>
+                <td>
+                    <form name="formulario" method="post" action="http://pagina.com/send.php">
+                        <input type="date" name="fecha" class="form-control" min="2020-01-14" max="2020-11-11" step="1">
+                        </form>
+                </td>
+                <td><form>
+                    <div>
+                        <input type="search" id="MySearch" name="q"
+                        placeholder="Ingresa tu código" size="15" style="background-color: black; color: white;">
+                    </div>
+                </form></td>
+            </tr>
+        </table></div>
+    </div>
+    <div class="contenido">
+        <img src="imagenes/fb.jpg" height="170px" width="100%">
+        <div class="nuevo-texto">
+            <br>
+            <table>
+                <tr>
+                    <td><img src="imagenes/H.png" height="40px" width="40px"></td>
+                    <td style="text-align: left;">30</td>
+                    <td><img src="imagenes/D.png" height="40px" width="40px"></td>
+                    <td style="text-align: left;">18</td>
+                    <td><img src="imagenes/R.png" height="40px" width="40px"></td>
+                    <td style="text-align: left;">31</td>
+                    <td><img src="imagenes/P.png" height="40px" width="40px"></td>
+                    <td style="text-align: left;">Hospitalidad</td>
+                    <td><img src="imagenes/U.png" height="40px" width="40px"></td>
+                    <td style="text-align: left;">Excelente</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td><b>Hoteles</b></td>
+                    <td></td>
+                    <td><b>Destinos</b></td>
+                    <td></td>
+                    <td><b>Restaurantes</b></td>
+                    <td></td>
+                    <td><b>Peruana</b></td>
+                    <td></td>
+                    <td><b>Ubicacion</b></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <br>
+    <br>
+    <div class="nuevo">
+        <div class="row">
+            <div class="col-xs-6 col-md-6" align="left" style="padding-left: 130px;">
+                <font size="+3"><li><b>¿Por qué Casa <br> Andina?</b></li></font>
+                <h6>Somos una cadena hotelera peruana fundada en febrero de 2003,<br>
+                enfocada en proporcionar a nuestros huéspedes una experiencia de <br>
+                viaje que supere sus espectativas. Integramos las particularidades de <br>
+                cada destino donde nos encontramos desde arquitectura, decoración, <br>
+                gastronomia, actividades y música, ofreciendo así a nuestros visitantes <br>
+                una experiencia de viaje única.</h6>
+                <ul class="footer-links"><li><h5 style="color: orange;">SABER MAS -></h5></li></ul>
+                <table>
+                <tr>
+                    <td><img src="imagenes/smi.png" height="110px" width="110px"></td>
+                    <td><img src="imagenes/kha.png" height="110px" width="110px"></td>
+                    <td><img src="imagenes/trip.png" height="110px" width="110px"></td>
+                </tr>
+            </table>
+            </div>
+            <div class="col-xs-6 col-md-4" align="right">
+                <div class="pentagonal">
+                <img src="imagenes/media.png" height="130px" width="300px">
+                </div>
+                <img src="imagenes/Fondo.jpg" height="400px" width="650px">
+            </div>
+        </div>
+    </div>
+    <br><br><br><br><br>
+    <div class="container">
+        <div class="row" id="aqui">
+            <table align="center" class="form-control" style="width: 80%;">
+                <tr>
+                    <td colspan="4"><h4 style="color: black;">Beneficios de reservar On-line</h4></td>
+                </tr>
+                <tr>
+                    <td><img src="imagenes/R.png" height="40px" width="40px"></td>
+                    <td>10% dcto. en nuestros <br> restaurantes.</td>
+                    <td style="padding-left: 70px;"><img src="imagenes/C.png" height="40px" width="40px"></td>
+                    <td>Bebida de cortesía</td>
+                    <td style="padding-left: 70px;"><img src="imagenes/M.png" height="40px" width="40px"></td>
+                    <td>Flexibilidad</td>
+                    <td style="padding-left: 70px;"><img src="imagenes/H.png" height="40px" width="40px"></td>
+                    <td>Tarifa Preferente</td>
+                </tr>
+            </table>
+        </div>
+        <hr width="80%" align="center" size="20" style="background-color: orange;">
+        <ul class="footer-links"><li><h6 style="color: orange; padding-left: 10%;">BENEFICIOS EXCLUSIVOS RESERVANDO EN NUESTRA WEB -></h6></li></ul>
+    </div>
+    <div class="contenidos" style="background-color: rgba(4, 0, 27, 0.863);">
+        <br>
+        <ul><h2 style="color: white; padding-left: 20%;">Oportunidades para Aventurarte</h2></ul>
+        <br>
+        <div>
+            <table align="center" style="width: 900px; padding: 5px;">
+                <tr>
+                    <td rowspan="2"><img height="105%" alt="Cambiar imagen" onmouseout="this.src='imagenes/aven.jpg';" onmouseover="this.src='imagenes/aver.jpg';" src="imagenes/aven.jpg"/></td>
+                    <td><img alt="Cambiar imagen" onmouseout="this.src='imagenes/pi.jpg';" onmouseover="this.src='imagenes/pi2.jpg';" src="imagenes/pi.jpg"/></td>
+                </tr>
+                <tr>
+                    <td><img width="100%" alt="Cambiar imagen" onmouseout="this.src='imagenes/aven2.jpg';" onmouseover="this.src='imagenes/can.jpg';" src="imagenes/aven2.jpg"/></td>
+                </tr>
+            </table>
+        </div><br>
+        <ul class="footer-links"><li><h6 style="color: orange; padding-left: 20%;">MAS PROMOCIONES -></h6></li></ul>
+        <br>
+        <div class="container">
+            <div class="row" style="padding-left: 100px;">
+            <div class="col-xs-6 col-md-8" align="left"><table>
+            <tr>
+                <br>
+                <td><h6 style="color: white; ">REDES SOCIALES</h6></td>
+                <ul>
+                <td><li><a href="https://www.facebook.com/casaandina/"><img src="imagenes/facebook.png" height="40px" width="50px" style="padding: 5px;"></a></li></td>
+                <td><li><a href="https://www.twitter.com/casaandinahotel"><img src="imagenes/twitter.png" height="40px" width="50px" style="padding: 5px;"></a></li></td>
+                <td><li><a href="https://www.instagram.com/casaandina/"><img src="imagenes/instagran.png" height="40px" width="50px" style="padding: 5px;"></a></li></td>
+                <td><li><a href="https://www.flickr.com/people/casa-andina/"><img src="imagenes/messenger.png" height="40px" width="50px" style="padding: 5px;"></a></li></td>
+                <td><li><a href="https://www.facebook.com/user/casaandina"><img src="imagenes/youtube.png" height="40px" width="50px" style="padding: 5px;"></a></li></td>
+                </ul>
+            </tr>
+            </table>
+            </div>
+            <div class="col-xs-6 col-md-4" style="background-color:black; border:black 15px solid;">
+                <h4 style="color: white;">Suscribete</h4>
+                <h6 style="color: white;">PERSONA</h6>
+                <p style="color: white;"><input type="radio"> Natural <input type="radio"> Jurídica</p>
+                <form action="">
+                    <div>
+                        <input type="search" id="miBusqueda" name="x" placeholder="Ingresa tu e-mail">
+                        <button>Buscar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    </div>
+    <footer class="site-footer" style="background-color: #130E0A;">
+        <hr>
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-6 col-md-8">
+                    <h5 style="color: white;"><b>CASA ANDINA</b></h5>
+                    <h6 style="color: white; padding-left: 30px;">HOTELES</h6>
+                </div>
+                <div>
+                    <br>
+                    <h6 style="color: white;">MEDIOS DE PAGO</h6>
+                </div>
+                <table>
+                    <tr>
+                        <td><img src="imagenes/visa.jpg" height="40px" width="50px" style="padding: 5px;"></td>
+                        <td><img src="imagenes/mastercard.jpg" height="40px" width="50px" style="padding: 5px;"></td>
+                        <td><img src="imagenes/american.png" height="40px" width="50px" style="padding: 5px;"></td>
+                        <td><img src="imagenes/diners.png" height="40px" width="50px" style="padding: 5px;"></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <hr width="80%" align="center" size="20" style="background-color: white;">
+        <div class="container" >
+            <div class="row" >
+                <div class="col-xs-6 col-md-2">
+                    <h6 style="color: white;">CASA ANDINA</h6>
+                    <ul class="footer-links">
+                        <li><a href=""><h7>Sobre nosotros</h7></a></li>
+                        <li><a href=""><h7>Blog Travle Casa Andina</h7></a></li>
+                        <li><a href=""><h7>Responsabilidad social</h7></a></li>
+                        <li><a href=""><h7>Contacto</h7></a></li>
+                        <li><a href=""><h7>Dog friendly</h7></a></li>
+                        <li><a href=""><h7>Trabaja con nosotros</h7></a></li>
+                        <li><a href=""><h7>Viajeros Auténticos</h7></a></li>
+                    </ul>
+                </div>
+                <div class="col-xs-6 col-md-2">
+                    <h6 style="color: white;">RESERVAS</h6>
+                    <ul class="footer-links">
+                        <li><a href=""><h7>Central de Resrvas:</h7></a></li>
+                        <li><a href=""><h7>+51 1 3916500</h7></a></li>
+                        <li><a href=""><h7>Correo de Reservas:</h7></a></li>
+                        <li><a href=""><h7>centralreservas@casa-andina.com</h7></a></li>   
+                    </ul>
+                </div>
+                <div class="col-cs-6 col-md-2">
+                    <h6 style="color: white;">ATENCION AL CLIENTE</h6>
+                    <ul class="footer-links">
+                        <li><a href=""><h7>Libro de reclamaciones</h7></a></li>
+                        <li><a href=""><h7>Solicitud de derechos arco</h7></a></li>
+                        <li><a href=""><h7>Comprobantes electrónicos</h7></a></li>
+                        <li><a href=""><h7>Preguntas frecuentes</h7></a></li> 
+                    </ul>
+                </div>
+                <div class="col-cs-6 col-md-2">
+                    <h6 style="color: white;">LLÁMANOS GRATIS</h6>
+                    <ul class="footer-links">
+                        <li><a href=""><h7>Provincias</h7></a></li>
+                        <li><a href=""><h7>0 800 71895</h7></a></li>
+                        <li><a href=""><h7>Canadá</h7></a></li>
+                        <li><a href=""><h7>888 350 6263</h7></a></li>
+                        <li><a href=""><h7>Chile</h7></a></li>
+                        <li><a href=""><h7>080 091 4163</h7></a></li>
+                        <li><a href=""><h7>Ecuador</h7></a></li>
+                        <li><a href=""><h7>1 800 000 924</h7></a></li>
+                        <li><a href=""><h7>EEUU</h7></a></li>
+                        <li><a href=""><h7>866 220 4434</h7></a></li>
+                        <li><a href=""><h7>Reino Unido</h7></a></li>
+                        <li><a href=""><h7>08 082 343 805</h7></a></li>
+                    </ul>
+                </div>
+                <div class="col-cs-6 col-md-3">
+                    <h6 style="color: white;">CONTÁCTANOS</h6>
+                    <ul class="footer-links">
+                        <li><a href=""><h7>Agencias de Viaje:</h7></a></li>
+                        <li><a href=""><h7>+51 1 213 97 00 Anexo 3723</h7></a></li>
+                        <li><a href=""><h7>agencias@casa-andina.com</h7></a></li>
+                        <li><a href=""><h7>Eventos:</h7></a></li>
+                        <li><a href=""><h7>+51 1213 9700 anexo</h7></a></li>
+                        <li><a href=""><h7>3724/3750/3721</h7></a></li>
+                        <li><a href=""><h7>eventos@casa-andina.com</h7></a></li>
+                        <li><a href=""><h7>Empresas:</h7></a></li>
+                        <li><a href=""><h7>+51 1 2139700 anexos 3741 y 3786</h7></a></li>
+                        <li><a href=""><h7>empresas@casa-andina.com</h7></a></li>
+                        <li><a href=""><h7>Oficinas Corporativas:</h7></a></li>
+                        <li><a href=""><h7>+51 1213 9700</h7></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <hr width="80%" align="center" size="20" style="background-color: white;">
+        <div class="container" align="center">
+            <div><h7 style="color: silver;">Términos y condiciones * Politica web de privacidad * 
+                Memoria Anual SMV * Hechos de importancia SMV * Información Financiera SMV</h7>
+            </div>
+        </div>
+        <hr width="80%" align="center" size="20" style="background-color: white;">
+        <div class="container">
+            <div class="row">
+                <div  class="col-md-8">
+                    <p style="color: silver;" align="right" class="copyright-text">Proyecto Casa Andina &copy; 2020
+                        All Rights Reserved by
+                        <a href="#">Javier</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <br>
+    </footer>
+    <script>
+    var cont=0
+    function cambia(){
+        cont++;
+        switch(cont%4+1){
+            case 1:
+            document.getElementById("fotocambia").src="imagenes/casa-andina-private-collection-puno-1.jpg";
+            break;
+            case 2:
+            document.getElementById("fotocambia").src="imagenes/2.jpg";
+            break;
+            case 3:
+            document.getElementById("fotocambia").src="imagenes/1.jpg";
+            break;
+            case 4:
+            document.getElementById("fotocambia").src="imagenes/4.jpg";
+            break;
+        }
+    }
+    function inicio(){
+        setInterval(cambia, 3000);
+    }
+    window.onload=inicio;
+    </script>
+</body>
+</html>
